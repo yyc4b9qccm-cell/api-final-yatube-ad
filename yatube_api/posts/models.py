@@ -58,6 +58,7 @@ class Group(models.Model):
     )
 
     class Meta:
+        ordering = ('-id',)
         verbose_name = 'Группа'
         verbose_name_plural = 'Группы'
 
@@ -112,6 +113,7 @@ class Follow(models.Model):
 
     class Meta:
         unique_together = ('user', 'following')
+        ordering = ('-id',)
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
 
