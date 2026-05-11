@@ -1,7 +1,7 @@
 from rest_framework import viewsets, filters
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.shortcuts import get_object_or_404
-from posts.models import Post, Group, Comment, Follow
+from posts.models import Post, Group, Follow
 from .serializers import (
     PostSerializer, GroupSerializer, CommentSerializer, FollowSerializer
 )
@@ -45,4 +45,3 @@ class FollowViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-    
